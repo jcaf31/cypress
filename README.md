@@ -1,20 +1,6 @@
 # 🚀 Jean Carlo Aguirre Cypress Project - Test Automation for SauceDemo 🚀
 
-<div align="center">
-  <img src="https://your-image-hosting.com/path/to/logo.png" alt="AutomaCypress Logo">
-</div>
-
 > **Automatización de pruebas rápidas y confiables para [SauceDemo](https://www.saucedemo.com/) usando [Cypress](https://www.cypress.io/) con 💛 y JavaScript!**
-
-## 📌 Índice
-
-- [Acerca del proyecto](#acerca-del-proyecto)
-- [Tecnologías utilizadas](#tecnologías-utilizadas)
-- [Configuración del entorno](#configuración-del-entorno)
-- [Ejecución de las pruebas](#ejecución-de-las-pruebas)
-- [Contribuir](#contribuir)
-- [Licencia](#licencia)
-- [Contacto](#contacto)
 
 ## 🧐 Acerca del proyecto
 
