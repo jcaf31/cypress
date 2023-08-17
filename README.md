@@ -1,4 +1,4 @@
-# 🚀 AutomaCypress - Test Automation for SauceDemo 🚀
+# 🚀 Jean Carlo Aguirre Cypress Project - Test Automation for SauceDemo 🚀
 
 <div align="center">
   <img src="https://your-image-hosting.com/path/to/logo.png" alt="AutomaCypress Logo">
