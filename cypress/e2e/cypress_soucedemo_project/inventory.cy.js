@@ -1,4 +1,4 @@
-describe('Validate Inventory', () => {
+describe('validate inventory', () => {
 
   beforeEach(() => {
     cy.visit('http://www.saucedemo.com/')
