@@ -13,8 +13,6 @@ describe('shopping cart', () => {
     cy.url().should('eq', 'https://www.saucedemo.com/inventory.html')
     cy.get('.app_logo').contains('Swag Labs')
     cy.get('.title').contains('Products')
-    cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
-    cy.get('[data-test="add-to-cart-sauce-labs-bike-light"]').click()
     //Aqui quede
   })
 })
