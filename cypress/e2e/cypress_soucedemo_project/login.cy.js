@@ -1,4 +1,4 @@
-describe('login with correct information', () => {
+describe('Login', () => {
   let fixture;
   beforeEach(() => {
     cy.fixture('soucedemo.json').then((fixture_from_fixtures) => {

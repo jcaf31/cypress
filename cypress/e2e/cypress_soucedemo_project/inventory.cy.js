@@ -1,4 +1,4 @@
-describe('validate inventory', () => {
+describe('Inventory', () => {
   let fixture;
   let countItems;
   beforeEach(() => {
@@ -7,7 +7,11 @@ describe('validate inventory', () => {
     });
   })
   it('Validate all products contain expected information', () => {
-    let priceRegEx = new RegExp('^\\$[\\d]+\\.[\\d]{2}'); 
+    
+    let priceRegEx = new RegExp('^\\$[\\d]+\\.[\\d]{2}');
+    let descRegEx = new RegExp('^.{5,}$');  
+    let itemNameRegEx = new RegExp('^[A-Z][a-z]+(\\s[A-Z](-[A-Z])?[a-z]+)+$');
+
     cy.visit('http://www.saucedemo.com/');
     cy.get("#user-name").type(fixture.user_name);
     cy.get('[data-test="password"]').type(fixture.password);
@@ -20,10 +24,10 @@ describe('validate inventory', () => {
         cy.get('.inventory_item_price').eq(i).then(($element) => {
           expect($element.text()).to.match(priceRegEx);
         })
-        cy.get('.inventory_item_desc').eq(i).invoke('text').should('match', new RegExp('^.{5,}$'));
-        cy.get('.inventory_item_name').eq(i).invoke('text').should('match', new RegExp('^[A-Z][a-z]+(\\s[A-Z](-[A-Z])?[a-z]+)+$'));
+        cy.get('.inventory_item_desc').eq(i).invoke('text').should('match', descRegEx);
+        cy.get('.inventory_item_name').eq(i).invoke('text').should('match', itemNameRegEx);
         cy.get('.btn').eq(i).should('exist');
-    }
+      } 
     })
   })
 })
