@@ -19,7 +19,7 @@ describe('Inventory', () => {
     cy.get('[data-test="login-button"]').click();
     cy.url().should('eq', 'https://www.saucedemo.com/inventory.html');
     cy.get('.inventory_item').then(($numberOfItems) => {
-      let countItems = $numberOfItems.length;
+      const countItems = $numberOfItems.length;
       for(let i=0; i<countItems; i++){
         cy.get('.inventory_item_img a img').eq(i).invoke('attr', 'src').should('match', new RegExp('.jpg$'));
         cy.get('.inventory_item_price').eq(i).then(($itemPrice) => {
