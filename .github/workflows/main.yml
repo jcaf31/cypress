@@ -6,12 +6,12 @@ jobs:
   install_and_run:
     runs-on: ubuntu-latest
     steps:
+
       - name: Checkout
         uses: actions/checkout@v2
-
       - name: Install Dependencies
         run: yarn install  # O usa 'npm install' si prefieres npm
-
+        
       - name: Cypress run
         uses: cypress-io/github-action@v3
         with:
