@@ -15,6 +15,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v3
         with:
-          project: ../cypress/e2e
+          project: ./e2e/cypress_soucedemo_project
           browser: chrome
           runTests: yarn test
