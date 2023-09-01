@@ -17,4 +17,4 @@ jobs:
         with:
           project: ./e2e
           browser: chrome
-          test: yarn test
+          runTests: yarn test
