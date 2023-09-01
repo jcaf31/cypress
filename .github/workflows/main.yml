@@ -17,6 +17,5 @@ jobs:
         with:
           project: ./e2e
           browser: chrome
-          build: yarn build
-          start: yarn start
+          build: yarn run
           wait-on: "https://www.saucedemo.com"
