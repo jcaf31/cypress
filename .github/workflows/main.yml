@@ -1,6 +1,8 @@
 name: E2E on Chrome
 
-on: [push]
+on: 
+  push:
+  workflow_dispatch:
 
 jobs:
   install_and_run:
@@ -9,6 +11,7 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
+        
       - name: Install Dependencies
         run: yarn install  # O usa 'npm install' si prefieres npm
         
@@ -18,3 +21,4 @@ jobs:
           project: .
           browser: chrome
           runTests: yarn test
+
