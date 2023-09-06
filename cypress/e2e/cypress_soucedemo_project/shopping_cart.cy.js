@@ -9,19 +9,19 @@ describe('Shopping Cart', () => {
   beforeEach(() => {
     cy.fixture('soucedemo.json').then((fixture_from_fixtures) => {
       fixture = fixture_from_fixtures;
+      cy.visit(fixture.url);
     });
-    cy.visit('http://www.saucedemo.com/')
   })
   it('Shopping cart - validate the number of items selected on products page is equal to the cart page', () => {
 
     let itemsBadgeSelected;
     let numberOfItemsToAdd;
-    cy.get("#user-name").type(fixture.user_name)
-    cy.get('[data-test="password"]').type(fixture.password)
-    cy.get('[data-test="login-button"]').click()
-    cy.url().should('eq', 'https://www.saucedemo.com/inventory.html')
-    cy.get('.app_logo').contains('Swag Labs')
-    cy.get('.title').contains('Products')
+    cy.get("#user-name").type(fixture.userName);
+    cy.get('[data-test="password"]').type(fixture.password);
+    cy.get('[data-test="login-button"]').click();
+    cy.url().should('eq', fixture.url + 'inventory.html');
+    cy.get('.app_logo').contains(fixture.productsPage.pageTitle);
+    cy.get('.title').contains(fixture.productsPage.pageSubTitle);
     cy.get('.inventory_item').then(($invItems) => {
       const countItems = $invItems.length;
       numberOfItemsToAdd = getRandomInt(countItems) + 1;
