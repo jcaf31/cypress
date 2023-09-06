@@ -1,4 +1,10 @@
 {
-    "user_name": "standard_user",
-    "password": "secret_sauce"
+    "userName": "standard_user",
+    "password": "secret_sauce",
+    "url": "https://www.saucedemo.com/",
+
+    "productsPage":{
+      "pageTitle": "Swag Labs",
+      "pageSubTitle": "Products"
+    }
   }
