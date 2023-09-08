@@ -16,9 +16,7 @@ describe('Shopping Cart', () => {
 
     let itemsBadgeSelected;
     let numberOfItemsToAdd;
-    cy.get("#user-name").type(fixture.userName);
-    cy.get('[data-test="password"]').type(fixture.password);
-    cy.get('[data-test="login-button"]').click();
+    cy.login(fixture.userName, fixture.password);
     cy.url().should('eq', fixture.url + 'inventory.html');
     cy.get('.app_logo').contains(fixture.productsPage.pageTitle);
     cy.get('.title').contains(fixture.productsPage.pageSubTitle);
