@@ -15,9 +15,7 @@ describe('Inventory', () => {
     let itemNameRegEx = new RegExp('^[A-Z][a-z]+(\\s[A-Z](-[A-Z])?[a-z]+)+$');
     let extImageRegEx = new RegExp('.jpg$');
 
-    cy.get("#user-name").type(fixture.userName);
-    cy.get('[data-test="password"]').type(fixture.password);
-    cy.get('[data-test="login-button"]').click();
+    cy.login(fixture.userName, fixture.password);
     cy.url().should('eq', fixture.url + 'inventory.html');
     cy.get('.inventory_item').then(($numberOfItems) => {
       const countItems = $numberOfItems.length;
