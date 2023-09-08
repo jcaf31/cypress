@@ -1,19 +1,20 @@
 name: E2E on Chrome
 
-on: 
+on:
   push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
   install_and_run:
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout
         uses: actions/checkout@v2
         
       - name: Install Dependencies
-        run: yarn install  # O usa 'npm install' si prefieres npm
+        run: yarn install  
         
       - name: Cypress run
         uses: cypress-io/github-action@v3
@@ -21,4 +22,3 @@ jobs:
           project: .
           browser: chrome
           runTests: yarn test
-
