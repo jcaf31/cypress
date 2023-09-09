@@ -23,8 +23,26 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
 Cypress.Commands.add('login', (user, pass) => {
     cy.get('#user-name').type(user);
     cy.get('[data-test="password"]').type(pass);
     cy.get('[data-test="login-button"]').click();
 });
+
+Cypress.Commands.add('selectProducts', () => {
+    let numberOfProductsToAdd;
+    cy.get('.inventory_item').then(($invItems) => {
+        const maxProducts = $invItems.length;
+        numberOfProductsToAdd = getRandomInt(maxProducts) + 1;
+        for (let i = 0; i<numberOfProductsToAdd; i++){
+          cy.get('.btn').eq(i).click();
+        }
+      }).then(() => {
+        return numberOfProductsToAdd;
+      })
+})
