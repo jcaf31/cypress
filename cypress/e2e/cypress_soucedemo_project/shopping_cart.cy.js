@@ -31,7 +31,7 @@ describe('Shopping Cart', () => {
     })
   })
 
-  it.only('Checkout process', () => {
+  it.only('Correct checkout process', () => {
 
     let numberOfProductsToAdd;
 
@@ -40,6 +40,15 @@ describe('Shopping Cart', () => {
     cy.selectProducts().then(($numberOfProductsToAdd) => {
       numberOfProductsToAdd = $numberOfProductsToAdd;
     });
+    cy.get('#shopping_cart_container').click();
+    cy.get('[data-test="checkout"]').click();
+    cy.url().should('eq', fixture.url + 'checkout-step-one.html');
+    cy.get('.title').contains(fixture.checkoutPage.pageSubTitleStepOne);
+    cy.fillCheckoutForm(fixture.checkoutStepOne.firstName, fixture.checkoutStepOne.lastName, fixture.checkoutStepOne.zipCode);
+    cy.get('[data-test="continue"]').click();
+    cy.url().should('eq', fixture.url + 'checkout-step-two.html');
+    cy.get('.title').contains(fixture.checkoutPage.pageSubTitleStepTwo);
+    // cy.validateProdTotal();
   })
 
 })
